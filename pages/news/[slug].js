@@ -1,14 +1,10 @@
-import React from 'react'
-import { useRouter } from 'next/router'
+import React from "react";
+import { useRouter } from "next/router";
+import Layout from "@/components/Layout";
 
 function Slug() {
-
-    const router = useRouter();
-    return (
-        <div>
-            {router.query.slug}
-        </div>
-    )
+  const router = useRouter();
+  return <Layout>{router.query.slug}</Layout>;
 }
 
-export default Slug
+export default Slug;
