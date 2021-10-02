@@ -1,15 +1,17 @@
 import Layout from "@/components/Layout";
 import Link from "next/link";
 import { API_URL } from "@config/index";
+import NewsItem from "@/components/NewsItem";
 
 export default function Home({ news }) {
   return (
     <div>
       <Layout>
-      <h2>Latest News</h2>
-      {news.map((item) => (
-        <h1>{item.name}</h1>
-      ))}
+        <h2>Latest News</h2>
+        {news.length === 0 && <h3>No News Found</h3>}
+        {news.map((item) => (
+          <NewsItem key={item.id} news={item} />
+        ))}
       </Layout>
     </div>
   );
